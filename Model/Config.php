@@ -96,6 +96,7 @@ class Config
         $this->readFactory = $readFactory;
         $this->scopeConfig = $scopeConfig;
         $this->reader = $reader;
+	if (PHP_SAPI == 'cli') $state->setAreaCode('frontend');
 
         if (isset($_SERVER['X-LITEMAGE']) && $_SERVER['X-LITEMAGE']) {
             if ($pagecacheConfig->isEnabled()
